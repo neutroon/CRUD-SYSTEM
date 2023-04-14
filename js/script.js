@@ -5,6 +5,9 @@ var productPrice = document.getElementById("product-price");
 var productDescription = document.getElementById("product-description");
 var tableBody = document.getElementById("table-body");
 
+var addButton = document.getElementById("addButton");
+var error=document.getElementById("error");
+
 
 if (localStorage.getItem("products") == null) {
     var products = [];
@@ -13,6 +16,23 @@ if (localStorage.getItem("products") == null) {
 }
 
 function addProduct() {
+
+    if(productName.value==""||productCategory.value==""||productPrice.value==""||productDescription.value==""){
+        error.innerHTML="Empty fields :(";
+        productName.onclick=function(){
+          error.innerHTML="";
+        }
+        productCategory.onclick=function(){
+          error.innerHTML="";
+        }
+        productPrice.onclick=function(){
+          error.innerHTML="";
+        }
+        productDescription.onclick=function(){
+          error.innerHTML="";
+        }
+      }
+      else{
     var product = {
         pName: productName.value,
         pCategory: productCategory.value,
@@ -23,7 +43,7 @@ function addProduct() {
     localStorage.setItem("products", JSON.stringify(products));
     displayProduct();
     clearFields();
-}
+}}
 
 function displayProduct() {
     str = "";
@@ -130,5 +150,3 @@ function search() {
         }
     }
 }
-
-

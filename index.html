@@ -22,18 +22,20 @@
             <h1>CRUD SYSTEM</h1>
 
             <label for="product-name">Product Name</label>
-            <input id="product-name" type="text" class="form-control text-bg-dark" required>
+            <input id="product-name" type="text" class="form-control text-bg-dark" onkeyup="validation()" >
             <label for="product-category">Product Category</label>
-            <input id="product-category" type="text" class="form-control text-bg-dark" required>
+            <input id="product-category" type="text" class="form-control text-bg-dark" >
             <label for="product-price">Product Price</label>
-            <input id="product-price" type="text" class="form-control text-bg-dark" required>
+            <input id="product-price" type="text" class="form-control text-bg-dark" >
             <label for="product-description">Product Description</label>
-            <textarea id="product-description" type="text" class="form-control text-bg-dark" required></textarea>
-
+            <textarea id="product-description" type="text" class="form-control text-bg-dark" ></textarea>
+            
+            <p id="error" class="text-danger"></p>
             <div class="flex-button">
-                <input class="btn btn-outline-success my-3 mx-1 w-50" type="button" value="add" onclick="addProduct()">
+                <input id="addButton" class="btn btn-outline-success my-3 mx-1 w-50" type="button" value="add" onclick="addProduct()">
                 <input class="btn btn-outline-danger my-3 mx-1 w-50" type="button" value="clear"
                     onclick="clearFields()">
+
             </div>
         </div>
 
