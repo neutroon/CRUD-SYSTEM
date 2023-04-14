@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>CRUD</title>
+</head>
+
+<body>
+    <div class="flex">
+        <input type="search" placeholder="Search..." name="" id="search" onkeyup="search();highlightedText()"
+            class="form-control w-50 text-bg-info" autocomplete="off">
+    </div>
+    <div class="flex">
+
+        <div class="container inputField card text-bg-dark">
+            <h1>CRUD SYSTEM</h1>
+
+            <label for="product-name">Product Name</label>
+            <input id="product-name" type="text" class="form-control text-bg-dark">
+            <label for="product-category">Product Category</label>
+            <input id="product-category" type="text" class="form-control text-bg-dark">
+            <label for="product-price">Product Price</label>
+            <input id="product-price" type="text" class="form-control text-bg-dark">
+            <label for="product-description">Product Description</label>
+            <textarea id="product-description" type="text" class="form-control text-bg-dark"></textarea>
+
+            <div class="flex-button">
+                <input class="btn btn-outline-success my-3 mx-1 w-50" type="button" value="add" onclick="addProduct()">
+                <input class="btn btn-outline-danger my-3 mx-1 w-50" type="button" value="clear"
+                    onclick="clearFields()">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="displayField" style="width: 80%;">
+            <div class="table-responsive-xxl">
+                <table class="table text-bg-light">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
